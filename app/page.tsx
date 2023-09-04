@@ -20,8 +20,8 @@ export default async function Home() {
                     <h1 className="text-4xl font-extrabold">
                         Car Catalogue
                     </h1>
-                    <p>Explore the cars you might like</p>
-                    <SearchBar />
+                    <p>Explore the cars you might   like</p>
+                    <SearchBar /> 
                     <div className="home__filter-container">
                         <CustomFilter title="fuel" />
                         <CustomFilter title="year" />
