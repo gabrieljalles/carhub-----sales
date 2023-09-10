@@ -3,6 +3,7 @@ import { CarProps } from '@/types';
 import { Dialog, Transition } from '@headlessui/react';
 import React, { Fragment } from 'react';
 import Image from 'next/image';
+import { generateCarImageUrl } from '@/utils';
 
 interface CarDetailsProps {
     isOpen: boolean;
@@ -11,12 +12,12 @@ interface CarDetailsProps {
 }
 
 
-const CarDetails = ({ isOpen, closeModal, car}: CarDetailsProps) => {
+const CarDetails = ({ isOpen, closeModal, car }: CarDetailsProps) => {
     return (
         <>
             <Transition appear show={isOpen} as={Fragment}>
-                <Dialog as="div" className="relative z-10" 
-                onClose={closeModal}>
+                <Dialog as="div" className="relative z-10"
+                    onClose={closeModal}>
                     <Transition.Child
                         as={Fragment}
                         enter="ease-out duration-300"
@@ -26,7 +27,7 @@ const CarDetails = ({ isOpen, closeModal, car}: CarDetailsProps) => {
                         leaveFrom="opacity-100"
                         leaveTo="opacity-0"
                     >
-                        <div className="fixed inset-0 bg-black bg-opacity-25"/>
+                        <div className="fixed inset-0 bg-black bg-opacity-25" />
                     </Transition.Child >
 
                     <div className="fixed inset-0 overflow-y-auto">
@@ -51,26 +52,26 @@ const CarDetails = ({ isOpen, closeModal, car}: CarDetailsProps) => {
                                             alt="close"
                                             width={20}
                                             height={20}
-                                            className="object-contain" 
+                                            className="object-contain"
                                         />
                                     </button>
 
                                     <div className="flex-1 flex flex-col gap-3">
                                         <div className="relative w-full h-40 bg-pattern bg-cover bg-center rounded-lg">
                                             <Image src={generateCarImageUrl(url, 'car')} alt="carmodel" fill priority
-                                            className='object-contain' />
+                                                className='object-contain' />
                                         </div>
 
                                         <div className="flex gap-3">
                                             <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
-                                                <Image src={generateCarImageUrl(url, '29')} alt="car model" fill priority className="object-contain"/>
+                                                <Image src={generateCarImageUrl(url, '29')} alt="car model" fill priority className="object-contain" />
                                             </div>
                                             <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
-                                                <Image src={generateCarImageUrl(url, '33')} alt="car model" fill priority className="object-contain"/>
+                                                <Image src={generateCarImageUrl(url, '33')} alt="car model" fill priority className="object-contain" />
 
                                             </div>
                                             <div className="flex-1 relative w-full h-24 bg-primary-blue-100 rounded-lg">
-                                                <Image src={generateCarImageUrl(url, '13')} alt="car model" fill priority className="object-contain"/>
+                                                <Image src={generateCarImageUrl(url, '13')} alt="car model" fill priority className="object-contain" />
 
                                             </div>
 
