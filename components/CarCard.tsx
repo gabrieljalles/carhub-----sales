@@ -5,15 +5,15 @@ import { useState } from 'react'
 import Image from 'next/image'
 import { CarProps } from '@/types';
 import CustomButton from './CustomButton';
-import { calculateCarRent } from '@/utils';
+import { calculateCarRent, generateCarImageUrl } from '@/utils';
 import { CarDetails } from '.';
 
 interface CarCardProps {
     car: CarProps;
 }
 
-const CarCard = ({car}: CarCardProps) => {
-    const {city_mpg, year, make, model, transmission, drive } = car;
+const CarCard = ({ car }: CarCardProps) => {
+    const { city_mpg, year, make, model, transmission, drive } = car;
 
     const [isOpen, setIsOpen] = useState(false);
 
@@ -21,7 +21,7 @@ const CarCard = ({car}: CarCardProps) => {
 
     return (
         <div className="car_card group">
-            
+
             <div className="car-card__content">
                 <h2 className="car-card__content-title">
                     {make} {model}
@@ -71,11 +71,11 @@ const CarCard = ({car}: CarCardProps) => {
                 <div className='car-card__btn-container'>
                     <CustomButton
                         title="View More"
-                        containerStyles="w-full py-[16px] rounded-full bg-primary-blue" 
+                        containerStyles="w-full py-[16px] rounded-full bg-primary-blue"
                         btnType={'button'}
-                        textStyles="text-white text-[14px] leading-[17px] font-bold" 
+                        textStyles="text-white text-[14px] leading-[17px] font-bold"
                         rightIcon="/right-arrow.svg"
-                        handleClick={()=> setIsOpen(true)}                  
+                        handleClick={() => setIsOpen(true)}
                     />
                 </div>
             </div>
