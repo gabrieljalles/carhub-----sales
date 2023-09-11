@@ -29,3 +29,6 @@ const ShowMore = ({ pageNumber, isNext }: ShowMoreProps) => {
         </div>
     )
 }
+
+export default ShowMore;
+
